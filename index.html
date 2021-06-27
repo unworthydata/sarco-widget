@@ -1,0 +1,129 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Roboto+Mono:wght@300;400&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="styles/normalize.css" />
+    <link rel="stylesheet" href="styles/styles.css" />
+    <script
+      src="https://kit.fontawesome.com/10508e533f.js"
+      crossorigin="anonymous"
+    ></script>
+    <script>
+      function addToken() {
+        const tokenAddress = '0x7697b462a7c4ff5f8b55bdbc2f4076c2af9cf51a';
+        const tokenSymbol = 'SARCO';
+        const tokenDecimals = 18;
+        const tokenImage = 'icons/sarco.svg';
+
+        try {
+          // wasAdded is a boolean. Like any RPC method, an error may be thrown.
+          const wasAdded = await ethereum.request({
+            method: 'wallet_watchAsset',
+            params: {
+              type: 'ERC20', // Initially only supports ERC20, but eventually more!
+              options: {
+                address: tokenAddress, // The address that the token is at.
+                symbol: tokenSymbol, // A ticker symbol or shorthand, up to 5 chars.
+                decimals: tokenDecimals, // The number of decimals in the token
+                image: tokenImage, // A string url of the token logo
+              },
+            },
+          });
+
+          if (wasAdded) {
+            console.log('Thanks for your interest!');
+          } else {
+            console.log('Your loss!');
+          }
+        } catch (error) {
+          console.log(error);
+        }
+      }
+    </script>
+    <title>$SARCO Widget</title>
+  </head>
+  <body>
+    <div class="widget">
+      <div class="widget__banner">
+        <span class="banner__icon-background">
+          <img
+            src="icons/sarco.svg"
+            alt="SARCO token icon"
+            class="banner__icon"
+          />
+        </span>
+        <h1>Sarcophagus</h1>
+      </div>
+      <div class="widget__body">
+        <hr class="body__separator" />
+        <p class="body__info">Name: Sarcophagus</p>
+        <p class="body__info">Symbol: SARCO</p>
+        <p class="body__info">Decimals: 18</p>
+        <p class="body__info">
+          Address: 0x7697b462a7c4ff5f8b55bdbc2f4076c2af9cf51a
+        </p>
+        <hr class="body__separator" />
+      </div>
+      <div class="widget__footer">
+        <span class="footer__btn-group">
+          <a target="_self" href="#">
+            <i class="fas fa-plus-circle"></i>Add to Metamask
+          </a>
+          <a href="#">
+            <i class="fas fa-external-link-alt"></i>View on Etherscan
+          </a>
+        </span>
+        <a href="#">
+          <i class="footer__share fas fa-share-alt-square"></i>
+        </a>
+      </div>
+    </div>
+
+    <br />
+    <br />
+    <br />
+    <div class="widget uppercase">
+      <div class="widget__banner">
+        <span class="banner__icon-background">
+          <img
+            src="icons/sarco.svg"
+            alt="SARCO token icon"
+            class="banner__icon"
+          />
+        </span>
+        <h1>Sarcophagus</h1>
+      </div>
+      <div class="widget__body">
+        <hr class="body__separator" />
+        <p class="body__info">Name: Sarcophagus</p>
+        <p class="body__info">Symbol: SARCO</p>
+        <p class="body__info">Decimals: 18</p>
+        <p class="body__info">
+          Address: 0x7697b462a7c4ff5f8b55bdbc2f4076c2af9cf51a
+        </p>
+        <hr class="body__separator" />
+      </div>
+      <div class="widget__footer">
+        <span class="footer__btn-group">
+          <a target="_self" href="#">
+            <i class="fas fa-plus-circle"></i>Add to Metamask
+          </a>
+          <a href="#">
+            <i class="fas fa-external-link-alt"></i>View on Etherscan
+          </a>
+        </span>
+        <a href="#">
+          <i class="footer__share fas fa-share-alt-square"></i>
+        </a>
+      </div>
+    </div>
+  </body>
+</html>
