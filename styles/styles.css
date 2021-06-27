@@ -7,7 +7,7 @@ body {
 }
 
 .widget {
-  padding: 10px;
+  padding: 10px 10px 10px 20px;
   border: 2px solid white;
   border-radius: 5px;
 }
